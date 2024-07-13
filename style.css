@@ -1,0 +1,177 @@
+:root {
+  --Purple: hsl(259, 100%, 65%);
+  --Light-red: hsl(0, 100%, 67%);
+  --White: hsl(0, 0%, 100%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --Off-black: hsl(0, 0%, 8%);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--Off-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+.container {
+  background-color: var(--White);
+  padding: 40px;
+  width: 650px;
+  border-radius: 20px 20px 30%;
+}
+.container .theDate {
+  padding-bottom: 35px;
+  border-bottom: 1px solid var(--Light-grey);
+  position: relative;
+}
+.container .theDate .inputs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px;
+}
+.container .theDate .inputs .box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.container .theDate .box label {
+  color: var(--Smokey-grey);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 400;
+}
+.container .theDate .box input {
+  outline: none;
+  border: 1px solid var(--Light-grey);
+  color: var(--Off-black);
+  font-weight: 700;
+  font-size: 20px;
+  padding: 15px;
+  width: 125px;
+  border-radius: 6px;
+  cursor: pointer;
+  caret-color: var(--Purple);
+}
+.container .theDate .box input:focus,
+.container .theDate .box input:hover {
+  border-color: var(--Purple);
+}
+.container .theDate .box input.active {
+  border-color: var(--Light-red);
+}
+.container .theDate .box label.active,
+.container .theDate .box .empty-error,
+.container .theDate .box .valid-error {
+  color: var(--Light-red);
+  margin: 0;
+  font-size: 12px;
+  font-style: italic;
+}
+.container .theDate .box .empty-error,
+.container .theDate .box .valid-error {
+  display: none;
+}
+.container .theDate .box .empty-error.active,
+.container .theDate .box .valid-error.active {
+  display: block;
+}
+.container .theDate .btn {
+  background-color: var(--Purple);
+  position: absolute;
+  right: 0;
+  bottom: -35px;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+.container .theDate .btn:hover {
+  background-color: var(--Off-black);
+}
+.container .theDate .btn img {
+  width: 55%;
+}
+.container .age {
+  padding-top: 30px;
+}
+.container .age div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 5.2rem;
+  font-weight: 800;
+}
+.container .age p {
+  color: var(--Purple);
+  margin: 0;
+}
+.container .age span {
+  color: var(--Off-black);
+}
+.attribution {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100%;
+  color: var(--Off-black);
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: var(--Purple);
+}
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+    height: 530px;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+  .container .theDate {
+    padding-bottom: 60px;
+  }
+  .container .theDate .inputs {
+    gap: 15px;
+  }
+  .container .theDate .box label.active,
+.container .theDate .box .empty-error,
+.container .theDate .box .valid-error {
+  font-size: 10px;
+}
+  .container .theDate .box input {
+    width: 100px;
+  }
+  .container .theDate .btn {
+    width: 65px;
+    height: 65px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  .container .age div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 5.2rem;
+    font-weight: bold;
+  }
+  .container .age div {
+    font-size: 3rem;
+  }
+}
